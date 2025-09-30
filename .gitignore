@@ -60,3 +60,5 @@ test-results/
 # Cache
 .cache/
 *.cache
+__pycache__/
+*.py[cod]

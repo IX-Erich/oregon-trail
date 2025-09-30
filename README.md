@@ -1,44 +1,61 @@
 # Oregon Trail
 
-A recreation of the classic Oregon Trail game.
-
-## Description
-
-This project aims to recreate the classic Oregon Trail game experience, where players must navigate the challenges of westward expansion in 19th century America.
+A modern, text-based recreation of the classic Oregon Trail journey. Create a leader, pick a profession, and guide your party to Oregon City while balancing supplies, weather, and unexpected hardships.
 
 ## Features
 
-- [ ] Character creation and profession selection
-- [ ] Resource management (food, ammunition, money)
-- [ ] Random events and decision making
-- [ ] Disease and injury mechanics
-- [ ] Weather and terrain challenges
-- [ ] Trading posts and supply management
-- [ ] Multiple difficulty levels
+- [x] Character creation with multiple professions that alter starting supplies.
+- [x] Resource management for food, ammunition, health, and money.
+- [x] Daily decision making with travel, hunting, rest, and trading options.
+- [x] Random events including disease, injuries, bandits, and supply windfalls.
+- [x] Dynamic weather and terrain modifiers that impact progress.
+- [x] Trading posts with procedurally generated offers for buying and selling goods.
+- [x] Three difficulty levels that tune resources, risk, and time limits.
 
 ## Getting Started
 
 ### Prerequisites
 
-TBD - Will be updated based on implementation language/framework
+- Python 3.11+
+- (Optional) [`pipx`](https://pipx.pypa.io/) or a virtual environment for isolation.
 
 ### Installation
 
-TBD - Installation instructions will be added as development progresses
+```bash
+pip install -e .
+```
+
+This installs the package in editable mode and exposes the `oregon-trail` console script.
 
 ### Usage
 
-TBD - Usage instructions will be added as development progresses
+```bash
+oregon-trail [--name NAME] [--profession banker|carpenter|farmer|doctor] \
+             [--difficulty easy|normal|hard] [--seed SEED]
+```
 
-## Contributing
+If arguments are omitted the CLI will interactively prompt you for the missing information. Each in-game day you can choose to travel, hunt, rest, or visit a trading post when available. Reach 2,000 miles before the time limit runs out to win.
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+### Running Tests
+
+Install the development dependency and execute the tests with:
+
+```bash
+pip install pytest
+pytest
+```
+
+## Project Structure
+
+- `src/oregon_trail/game.py` – core simulation state machine and random events.
+- `src/oregon_trail/cli.py` – command line interface harnessing the game engine.
+- `tests/` – unit tests validating the primary game mechanics.
 
 ## License
 
-TBD - License will be determined
+TBD – License will be determined as the project evolves.
 
 ## Acknowledgments
 
-- Inspired by the original Oregon Trail game by Don Rawitsch, Bill Heinemann, and Paul Dillenberger
-- Originally developed by MECC (Minnesota Educational Computing Consortium)
+- Inspired by the original Oregon Trail game by Don Rawitsch, Bill Heinemann, and Paul Dillenberger.
+- Originally developed by MECC (Minnesota Educational Computing Consortium).
